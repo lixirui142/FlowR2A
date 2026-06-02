@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use FlowR2A in your research, please cite the following paper."
+title: "FlowR2A: Learning Reward-to-Action Distribution for Multimodal Driving Planning"
+authors:
+  - family-names: Li
+    given-names: Xirui
+    affiliation: The University of Hong Kong
+  - family-names: Liu
+    given-names: Zhe
+    affiliation: The University of Hong Kong
+  - family-names: Ye
+    given-names: Xiaoqing
+    affiliation: Changan Automobile
+  - family-names: Han
+    given-names: Wenhua
+    affiliation: Changan Automobile
+  - family-names: Pan
+    given-names: Yifeng
+    affiliation: Changan Automobile
+  - family-names: Han
+    given-names: Junyu
+    affiliation: Changan Automobile
+  - family-names: Zhao
+    given-names: Hengshuang
+    affiliation: The University of Hong Kong
+year: 2026
+preferred-citation:
+  type: article
+  title: "FlowR2A: Learning Reward-to-Action Distribution for Multimodal Driving Planning"
+  authors:
+    - family-names: Li
+      given-names: Xirui
+    - family-names: Liu
+      given-names: Zhe
+    - family-names: Ye
+      given-names: Xiaoqing
+    - family-names: Han
+      given-names: Wenhua
+    - family-names: Pan
+      given-names: Yifeng
+    - family-names: Han
+      given-names: Junyu
+    - family-names: Zhao
+      given-names: Hengshuang
+  journal: "arXiv preprint arXiv:XXXX.XXXXX"
+  year: 2026
