@@ -1,6 +1,6 @@
 # FlowR2A: Learning Reward-to-Action Distribution for Multimodal Driving Planning
 
-[![Project Page](https://img.shields.io/badge/Project-Page-blue?style=for-the-badge)](https://lixirui142.github.io/flowr2a-project-page/)
+[![Project Page](https://img.shields.io/badge/Project-Page-blue?style=for-the-badge)](https://lixirui142.github.io/flowr2a-ad/)
 [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b?style=for-the-badge&logo=arxiv)](https://arxiv.org/abs/XXXX.XXXXX)
 
 > **Code release is coming soon — currently being cleaned and documented.**
