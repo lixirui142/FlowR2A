@@ -8,16 +8,6 @@
 
 </div>
 
-## Table of Contents
-- [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Qualitative Results on NAVSIM](#qualitative-results-on-navsim)
-- [Getting Started](#getting-started)
-- [To-Do](#to-do)
-- [Acknowledgement](#acknowledgement)
-- [Citation](#citation)
-- [License](#license)
-
 ## Overview
 FlowR2A is a multimodal driving planner that learns the reward-conditioned action distribution *p(a | r)* with flow matching. Instead of treating simulation rewards as discriminative targets, FlowR2A treats them as a *condition*, unifying the dense supervision of scoring-based methods with the generative proposal modeling of anchor-based methods. At inference, generation is steered toward high-reward trajectories via classifier-free guidance.
 
@@ -25,6 +15,18 @@ FlowR2A is a multimodal driving planner that learns the reward-conditioned actio
 <img src="assets/pipeline.png" width="100%"/>
 <p><b>Training pipeline of FlowR2A.</b></p>
 </div>
+
+
+## Table of Contents
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+- [Qualitative Results on NAVSIM](#qualitative-results-on-navsim)
+- [Getting Started](#getting-started)
+- [To-Do](#to-do)
+- [Acknowledgement](#acknowledgement)
+- [Citation](#citation)
+- [License](#license)
+
 
 ## Qualitative Results on NAVSIM
 Each row is one planner; trajectory proposals are colored by PDM score, from <b>red&nbsp;(0)</b> to <b>green&nbsp;(1)</b>. FlowR2A (bottom row) produces proposals that are both diverse and consistently high-scoring.
