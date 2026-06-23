@@ -1,0 +1,20 @@
+_target_: navsim.agents.flowr2a.flowr2a_agent.TransfuserAgent
+_convert_: 'all'
+
+config:
+  _target_: navsim.agents.flowr2a.flowr2a_config.TransfuserConfig
+  _convert_: 'all'
+
+  trajectory_sampling:
+    _target_: nuplan.planning.simulation.trajectory.trajectory_sampling.TrajectorySampling
+    _convert_: 'all'
+    time_horizon: 4
+    interval_length: 0.5
+
+  latent: False
+
+checkpoint_path: null
+lr: 3e-4 # origianl 6e-4
+
+# https://github.com/hustvl/DiffusionDrive/issues/22#issuecomment-2566085213
+# I used a single A-100 with 3e-4 learning rate with a batch size of 256 and got a PDMS score of 87.3

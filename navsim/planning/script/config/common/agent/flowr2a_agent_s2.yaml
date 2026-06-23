@@ -1,0 +1,27 @@
+_target_: navsim.agents.flowr2a.flowr2a_agent.TransfuserAgent
+_convert_: 'all'
+
+config:
+  _target_: navsim.agents.flowr2a.flowr2a_config.TransfuserConfig
+  _convert_: 'all'
+
+  trajectory_sampling:
+    _target_: nuplan.planning.simulation.trajectory.trajectory_sampling.TrajectorySampling
+    _convert_: 'all'
+    time_horizon: 4
+    interval_length: 0.5
+
+  latent: False
+
+  # Stage-2 (scorer-only) overrides on top of the shared flowr2a_config defaults.
+  area_pred: True
+  ttc_time_pred: True
+  scorer_only: True
+  num_scorer_traj_sample: 32
+  checkpoint_path: /mnt/pfs-am/e2e-data/lixirui/navsim_workplace/exp/reward_dp_agent_v7-1_fix20_scorer_fix_all/2026.04.17.14.32/lightning_logs/version_0/checkpoints/epoch=99-step=133000.ckpt
+
+checkpoint_path: null
+lr: 3e-4 # origianl 6e-4
+
+# https://github.com/hustvl/DiffusionDrive/issues/22#issuecomment-2566085213
+# I used a single A-100 with 3e-4 learning rate with a batch size of 256 and got a PDMS score of 87.3

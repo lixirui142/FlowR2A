@@ -1,18 +1,54 @@
-# FlowR2A: Learning Reward-to-Action Distribution for Multimodal Driving Planning
+<div align="center">
+<h1>FlowR2A: Learning Reward-to-Action Distribution for Multimodal Driving Planning</h1>
 
-[![Project Page](https://img.shields.io/badge/Project-Page-blue?style=for-the-badge)](https://lixirui142.github.io/flowr2a-project-page/)
-[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b?style=for-the-badge&logo=arxiv)](https://arxiv.org/abs/XXXX.XXXXX)
+<a href="https://lixirui142.github.io/flowr2a-ad/"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
+<a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b.svg" alt="arXiv"></a>
+<a href="https://huggingface.co/lixirui142/FlowR2A"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow.svg" alt="Hugging Face Model"></a>
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> **Code release is coming soon — currently being cleaned and documented.**
->
-> Star or watch this repository to be notified when the code lands.
+</div>
+
+## Table of Contents
+- [Overview](#overview)
+- [Qualitative Results on NAVSIM](#qualitative-results-on-navsim)
+- [Getting Started](#getting-started)
+- [To-Do](#to-do)
+- [Acknowledgement](#acknowledgement)
+- [Citation](#citation)
 
 ## Overview
+FlowR2A is a multimodal driving planner that learns the reward-conditioned action distribution *p(a | r)* with flow matching. Instead of treating simulation rewards as discriminative targets, FlowR2A treats them as a *condition*, unifying the dense supervision of scoring-based methods with the generative proposal modeling of anchor-based methods. At inference, generation is steered toward high-reward trajectories via classifier-free guidance.
 
-FlowR2A is a multimodal driving planner that learns the reward-conditioned action distribution *p(a | r)* with flow matching. Instead of treating simulation rewards as discriminative targets, FlowR2A treats them as a *condition*, unifying the dense supervision of scoring-based methods with the generative proposal modeling of anchor-based methods.
+<div align="center">
+<img src="assets/pipeline.png" width="100%"/>
+<p><b>Training pipeline of FlowR2A.</b></p>
+</div>
 
+## Qualitative Results on NAVSIM
+Each row is one planner; trajectory proposals are colored by PDM score, from <b>red&nbsp;(0)</b> to <b>green&nbsp;(1)</b>. FlowR2A (bottom row) produces proposals that are both diverse and consistently high-scoring.
+
+<div align="center">
+  <img src="assets/qualitative_134.gif" width="49%"/>
+  <img src="assets/qualitative_240.gif" width="49%"/>
+</div>
+
+> More qualitative comparisons are available on the [project page](https://lixirui142.github.io/flowr2a-ad/).
+
+## Getting Started
+
+- [Data and Environment Preparation](docs/install.md) — install dependencies and download the data/models needed for evaluation.
+- [Evaluation](docs/evaluation.md) — download the pre-trained checkpoints and run evaluation on the test set.
+
+## To-Do
+- [x] Inference and evaluation code
+- [ ] Training code
+- [ ] Reward simulation / caching pipeline
+
+## Acknowledgement
+FlowR2A is built upon the following outstanding open-source contributions: [NAVSIM](https://github.com/autonomousvision/navsim), [DiffusionDrive](https://github.com/hustvl/DiffusionDrive).
 
 ## Citation
+If you find FlowR2A useful in your research or applications, please consider giving us a star 🌟 and citing it with the following BibTeX entry.
 
 ```bibtex
 @article{flowr2a2026,
@@ -24,5 +60,4 @@ FlowR2A is a multimodal driving planner that learns the reward-conditioned actio
 ```
 
 ## License
-
 MIT — see [LICENSE](LICENSE).
