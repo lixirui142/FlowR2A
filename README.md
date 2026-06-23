@@ -9,12 +9,14 @@
 </div>
 
 ## Table of Contents
+- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Qualitative Results on NAVSIM](#qualitative-results-on-navsim)
 - [Getting Started](#getting-started)
 - [To-Do](#to-do)
 - [Acknowledgement](#acknowledgement)
 - [Citation](#citation)
+- [License](#license)
 
 ## Overview
 FlowR2A is a multimodal driving planner that learns the reward-conditioned action distribution *p(a | r)* with flow matching. Instead of treating simulation rewards as discriminative targets, FlowR2A treats them as a *condition*, unifying the dense supervision of scoring-based methods with the generative proposal modeling of anchor-based methods. At inference, generation is steered toward high-reward trajectories via classifier-free guidance.
