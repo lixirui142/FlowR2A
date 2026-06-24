@@ -2,7 +2,7 @@
 <h1>FlowR2A: Learning Reward-to-Action Distribution for Multimodal Driving Planning</h1>
 
 <a href="https://lixirui142.github.io/flowr2a-ad/"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
-<a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b.svg" alt="arXiv"></a>
+<a href="https://arxiv.org/abs/2606.24231"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b.svg" alt="arXiv"></a>
 <a href="https://huggingface.co/lixirui142/FlowR2A"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow.svg" alt="Hugging Face Model"></a>
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -58,7 +58,9 @@ If you find FlowR2A useful in your research or applications, please consider giv
 @article{flowr2a2026,
   title         = {FlowR2A: Learning Reward-to-Action Distribution for Multimodal Driving Planning},
   author        = {Li, Xirui and Liu, Zhe and Ye, Xiaoqing and Han, Wenhua and Pan, Yifeng and Han, Junyu and Zhao, Hengshuang},
-  journal       = {arXiv preprint arXiv:XXXX.XXXXX},
+  journal       = {arXiv preprint arXiv:2606.24231},
+  eprint        = {2606.24231},
+  archivePrefix = {arXiv},
   year          = {2026}
 }
 ```
