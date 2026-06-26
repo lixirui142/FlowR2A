@@ -43,6 +43,8 @@ def main():
                         help="Score every sampled trajectory (default: only the agent-selected best)")
     parser.add_argument("--save_full_results", action="store_true",
                         help="Dump full_results.pkl with per-trajectory scores")
+    parser.add_argument("--save_trajectories", action="store_true",
+                        help="Dump trajectories.pkl mapping token -> best traj (8, 3)")
     # Inference parameters (see flowr2a_config.py)
     parser.add_argument("--test_score_min", type=float, default=DEFAULTS["test_score_min"])
     parser.add_argument("--test_score_max", type=float, default=DEFAULTS["test_score_max"])
@@ -67,6 +69,8 @@ def main():
         overrides.append("+eval_all_trajs=true")
     if args.save_full_results:
         overrides.append("+save_full_results=true")
+    if args.save_trajectories:
+        overrides.append("+save_trajectories=true")
 
     navsim_root = os.environ.get("NAVSIM_DEVKIT_ROOT", "")
     # Switch to accelerate launch for multi-gpu inference.

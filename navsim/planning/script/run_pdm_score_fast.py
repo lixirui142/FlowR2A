@@ -129,9 +129,12 @@ def main(cfg: DictConfig) -> None:
         per-trajectory resolution.
       - save_full_results (default False): dump full_results.pkl with per-trajectory
         scores + subscores. Off = evaluation only.
+      - save_trajectories (default False): dump trajectories.pkl mapping token ->
+        best trajectory (8, 3), same format as run_save_trajectories.py.
     """
     eval_all_trajs = cfg.get("eval_all_trajs", False)
     save_full_results = cfg.get("save_full_results", False)
+    save_trajectories = cfg.get("save_trajectories", False)
 
     accelerator = Accelerator()
     if accelerator.is_main_process:
@@ -201,6 +204,18 @@ def main(cfg: DictConfig) -> None:
         return
 
     logger.info("Inference complete. Starting PDM Scoring...")
+
+    # Optionally dump the best trajectory per token (token -> (8, 3) float32),
+    # same format as run_save_trajectories.py.
+    if save_trajectories:
+        best_trajs = {
+            token: np.asarray(entry["traj"][entry["best_idx"]], dtype=np.float32)
+            for token, entry in global_trajectories.items()
+        }
+        traj_path = Path(os.path.dirname(cfg.agent.checkpoint_path)) / "trajectories.pkl"
+        with open(traj_path, "wb") as f:
+            pickle.dump(best_trajs, f)
+        logger.info(f"Saved {len(best_trajs)} trajectories to {traj_path}")
 
     # Sanity check: all expected tokens populated
     missing = set(test_dataset.tokens) - set(global_trajectories.keys())
