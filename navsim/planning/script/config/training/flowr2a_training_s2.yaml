@@ -16,7 +16,7 @@ defaults:
 
 split: trainval
 cache_path: ${oc.env:NAVSIM_EXP_ROOT}/training_cache_4lidar_gv_fix
-reward_cache_path: ${oc.env:NAVSIM_EXP_ROOT}/training_cache_4lidar_gv
+reward_cache_path: ${oc.env:NAVSIM_EXP_ROOT}/training_cache_4lidar_gv_fix
 # cache_path: null
 use_cache_without_dataset: true # load the training samples from the cache. scene-filter will be ignored
 force_cache_computation: false
@@ -24,7 +24,7 @@ seed: 0
 
 dataloader:
   params:
-    batch_size: 32  # number of samples per batch, original 64
+    batch_size: 32  # number of samples per batch, full 256 on 8 GPUs
     num_workers: 4  # number of workers for data loading
     pin_memory: true  # pin memory for faster GPU transfer
     prefetch_factor: 2  # number of samples loaded in advance by each worker

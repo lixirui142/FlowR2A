@@ -169,6 +169,11 @@ class CacheOnlyDataset(torch.utils.data.Dataset):
             reward_path = self._get_reward_path(token_path)
             if reward_path.exists():
                 features["reward"] = load_feature_target_from_pickle(reward_path)
+            else:
+                raise FileNotFoundError(
+                    f"Reward cache not found: {reward_path}. Training requires per-scene "
+                    f"transfuser_reward.gz caches; generate them or fix reward_cache_path."
+                )
 
         return (features, targets)
 
@@ -297,6 +302,11 @@ class Dataset(torch.utils.data.Dataset):
             reward_path = self._get_reward_path(token_path)
             if reward_path.exists():
                 features["reward"] = load_feature_target_from_pickle(reward_path)
+            else:
+                raise FileNotFoundError(
+                    f"Reward cache not found: {reward_path}. Training requires per-scene "
+                    f"transfuser_reward.gz caches; generate them or fix reward_cache_path."
+                )
         return (features, targets)
 
     def cache_dataset(self) -> None:
