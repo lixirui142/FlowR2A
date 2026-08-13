@@ -77,14 +77,11 @@ def _draw_time_markers(ax, traj, marker_size=30, marker_type="o"):
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
-EXP_ROOT = os.environ.get("NAVSIM_EXP_ROOT", "/mnt/pfs-am/e2e-data/lixirui/navsim_workplace/exp")
+EXP_ROOT = os.environ["NAVSIM_EXP_ROOT"]
 FEATURE_CACHE = os.path.join(EXP_ROOT, "testing_cache")
-DEFAULT_CLIP_INDEX = "viz_output/navtest_clips_index.pkl"
+DEFAULT_CLIP_INDEX = "scripts/visualization/navtest_clips_index.pkl"
 
-OPENSCENE_ROOT = Path(os.environ.get(
-    "OPENSCENE_DATA_ROOT",
-    "/mnt/pfs-am/e2e-data/lixirui/navsim_workplace/dataset",
-))
+OPENSCENE_ROOT = Path(os.environ["OPENSCENE_DATA_ROOT"])
 NAVSIM_LOG_PATH = OPENSCENE_ROOT / "navsim_logs" / "test"
 SENSOR_BLOBS_PATH = OPENSCENE_ROOT / "sensor_blobs" / "test"
 

@@ -289,7 +289,7 @@ class TrajectoryHead(nn.Module):
         else:
             # no vocab file -> leave zero;
             print(f"[FlowR2A] traj_list not found at '{traj_list_path}'; "
-                  "skipping vocab load.")
+                  "skipping vocab load. Ensure you are not training the model.")
             self.traj_list = nn.Parameter(
                 torch.zeros([8192,8,3], dtype=torch.float32),
                 requires_grad=False,
@@ -368,7 +368,6 @@ class TrajectoryHead(nn.Module):
         # Inference / denoising
         self.inference_num_timesteps = config.inference_num_timesteps
         self.inference_pdm_score = getattr(config, "inference_pdm_score", 0.95)
-        self.inference_init_step = getattr(config, "inference_init_step", 0)
         self.inference_num_traj_sampling = getattr(config, "inference_num_traj_sampling", 60)
         self.cfg_scale = getattr(config, "cfg_scale", 5.0)
         self.p_partial = 0.4  # CFG partial-drop mode probability

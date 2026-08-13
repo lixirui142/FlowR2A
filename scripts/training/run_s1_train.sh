@@ -3,5 +3,4 @@
 set -e
 
 export TRAIN_CONFIG=flowr2a_training_s1
-
 bash scripts/training/run_single_train.sh flowr2a_agent_s1

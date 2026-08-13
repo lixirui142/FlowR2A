@@ -42,10 +42,11 @@ Each row is one planner; trajectory proposals are colored by PDM score, from <b>
 
 - [Data and Environment Preparation](docs/install.md) — install dependencies and download the data/models needed for evaluation.
 - [Evaluation](docs/evaluation.md) — download the pre-trained checkpoints and run evaluation on the test set.
+- [Training](docs/training.md) — download the training data and prepare the cache, then train the model in two stages.
 
 ## To-Do
 - [x] Inference and evaluation code
-- [ ] Training code
+- [x] Training code
 - [ ] Reward simulation / caching pipeline
 
 ## Acknowledgement

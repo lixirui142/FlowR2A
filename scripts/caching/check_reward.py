@@ -7,7 +7,7 @@ iPad GT (ego_areas, ttc_time), and ttc_time_b15.
 
 Usage:
     python scripts/caching/check_reward.py \
-        --training-cache-dir $NAVSIM_EXP_ROOT/training_cache_4lidar_gv_fix \
+        --training-cache-dir $NAVSIM_EXP_ROOT/training_cache \
         --num-workers 64
 """
 

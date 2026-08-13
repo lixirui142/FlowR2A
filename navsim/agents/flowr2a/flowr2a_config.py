@@ -1,4 +1,3 @@
-import os
 from dataclasses import dataclass
 from typing import Optional, Tuple
 
@@ -15,9 +14,9 @@ class TransfuserConfig:
 
     image_architecture: str = "resnet34"
     lidar_architecture: str = "resnet34"
-    # Local pretrained backbone weights. Leave unset to download from timm.
-    # Set FLOWR2A_BKB_PATH to a local pytorch_model.bin to load offline.
-    bkb_path: str = os.environ.get("FLOWR2A_BKB_PATH", "")
+    # Local pretrained backbone weights. If this file is missing, the backbone
+    # is downloaded from timm (see docs/training.md for offline download).
+    bkb_path: str = "ckpts/resnet34.a1_in1k/pytorch_model.bin"
 
 
     latent: bool = False
@@ -81,8 +80,9 @@ class TransfuserConfig:
     transformer_n_layers = 4
     num_traj_sample = 20
     # Trajectory vocabulary for training-time sampling. Not needed for inference
-    # (the vocab is restored from the checkpoint). Set FLOWR2A_TRAJ_LIST_PATH to train.
-    traj_list_path = os.environ.get("FLOWR2A_TRAJ_LIST_PATH", "")
+    # (the vocab is restored from the checkpoint). Download 8192.npy from the
+    # Hugging Face model page (see docs/training.md).
+    traj_list_path = "ckpts/8192.npy"
     status_len = 44 # 11 * 4 frames
     lidar_seq_len = 4
     encoder_config = {
@@ -98,7 +98,6 @@ class TransfuserConfig:
         "sin_dim": 64,
     }
     n_scorer_layers = 2
-    inference_init_step = 10
 
     # Proposal-centric prediction heads
     area_pred: bool = False
@@ -114,7 +113,7 @@ class TransfuserConfig:
     checkpoint_path: Optional[str] = None
     num_scorer_traj_sample: int = 20  # stage-1 falls back to num_traj_sample (=20)
 
-    # PDM cache directory name
+    # PDM cache directory name (used in stage-2)
     pdm_cache_dir: str = "train_pdm_cache"
 
     # detection

@@ -125,8 +125,8 @@ def main():
     parser.add_argument("--pdm-cache-dir", required=True,
                         help="Path to PDM metric cache (has scene_dir/unknown/token/ subdirs)")
     parser.add_argument("--traj-list-path",
-                        default="/mnt/pfs-am/e2e-data/lixirui/navsim_workplace/gtrs/traj_final/8192.npy",
-                        help="Path to vocab trajectories .npy (default: 8192.npy)")
+                        default="ckpts/8192.npy",
+                        help="Path to vocab trajectories .npy (default: ckpts/8192.npy)")
     parser.add_argument("--num-workers", type=int, default=32,
                         help="Number of parallel workers (default: 32)")
     parser.add_argument("--skip-existing", action="store_true",
