@@ -4,6 +4,7 @@
 <a href="https://lixirui142.github.io/flowr2a-ad/"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
 <a href="https://arxiv.org/abs/2606.24231"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b.svg" alt="arXiv"></a>
 <a href="https://huggingface.co/lixirui142/FlowR2A"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow.svg" alt="Hugging Face Model"></a>
+[![Papers with Code: #2 on NAVSIM v1](https://paperswithcode.co/api/v1/papers/2606.24231/leaderboard-badge.svg?eval=23717&live=1)](https://paperswithcode.co/api/v1/papers/2606.24231/leaderboard-badge-link?eval=23717)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 </div>
