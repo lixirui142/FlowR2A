@@ -11,6 +11,9 @@
 
 </div>
 
+> [!IMPORTANT]
+> This repository has moved to **[hku-sail/FlowR2A](https://github.com/hku-sail/FlowR2A)**. This copy is no longer maintained. Please check there for the latest code, issues, and updates.
+
 ## News
 - **[2026-10]** We released the reward simulation pipeline ([guide](docs/reward_simulation.md)) and interactive visualization tools ([guide](docs/visualization.md)).
 - **[2026-10]** FlowR2A has been accepted to NeurIPS 2026.
